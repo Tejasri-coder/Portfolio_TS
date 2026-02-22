@@ -1,44 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Teja Web | BALAPANURU TEJASRI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-light: #0f2027;
-      --bg-gradient-start: #203a43;
-      --bg-gradient-end: #2c5364;
-      --bg-section: #284b63;
-      --text-primary: #48779b;
-      --text-secondary: #f7e165;
-      --accent: #99d32c;
-      --accent-dark: #f0ebef;
-      --card-shadow: rgba(97, 248, 91, 0.7);
-      --btn-bg: #9fd449;
-      --btn-hover: #3ac946;
-      --scrollbar-bg: #394a52;
-      --scrollbar-thumb: #f76c6c;
-      --label-bg: #2a88f3;
-      --label-color: #fff1f1;
+      --bg-dark: #1a1a2e;
+      --accent-amber: #f3a712;
+      --text-light: #eee;
+      --text-secondary: #ccc;
+      --card-bg: #22223b;
+      --btn-bg: var(--accent-amber);
+      --btn-hover: #cf8500;
+      --shadow-dark: rgba(0, 0, 0, 0.7);
       --transition-speed: 0.3s;
-
-      /* New colors */
-      --slide-bg-pink: #34cf94;     /* pink */
-      --slide-bg-skin: #44e0e6;     /* skin */
-      --slide-text-skin: #5a3932;
-      --slide-text-skin: #5a3932;
-      --slide-bg-purple: ;   /* purple (blue violet) */
-      --slide-bg-skyblue: #87ceeb;  /* skyblue */
-      --slide-bg-gold: #ffd700;     /* gold */
-
-      --slide-text-pink: #521f2d;
-      --slide-text-skin: #4ac050;
-      --slide-text-purple: #e6d9ff;
-      --slide-text-skyblue: #d1f825;
-      --slide-text-gold: #4d3900;
+      --radius: 16px;
+      --font-mono: 'Consolas', 'Courier New', monospace;
     }
-    /* Reset and base */
+
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
@@ -46,156 +28,148 @@
     }
     html {
       scroll-behavior: smooth;
-      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-primary);
-      line-height: 1.5;
       min-height: 100vh;
+      padding: 24px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding-bottom: 80px;
-      background: transparent;
     }
     a {
-      color: var(--accent);
+      color: var(--btn-bg);
       text-decoration: none;
-      transition: color var(--transition-speed) ease;
+      transition: color var(--transition-speed);
     }
-    a:hover,
-    a:focus {
+    a:focus, a:hover {
       color: var(--btn-hover);
       outline: none;
     }
-    /* Container */
-    .container {
+    main.container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 20px 15px;
-      background: rgba(67, 245, 200, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(23, 38, 52, 0.8);
+      /* text-align center only inside cards */
     }
-    /* Hero */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 36px;
-      margin-bottom: 60px;
-      padding: 35px 25px 50px;
-      background: var(--bg-section);
-      border-radius: 22px;
-      box-shadow: 0 14px 48px var(--card-shadow);
-      position: relative;
-    }
-    .hero-content {
-      flex: 1 1 370px;
-    }
-    .hello {
-      font-family: 'Segoe UI Mono', monospace;
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: var(--accent);
-      letter-spacing: 3.2px;
-      margin-bottom: 0.5rem;
+    h1, h2, h3, h4 {
+      font-weight: 900;
+      color: var(--accent-amber);
     }
     h1 {
-      font-size: clamp(3rem, 8vw, 4.4rem);
-      font-family: 'Segoe UI Mono', monospace;
-      color: var(--accent-dark);
-      letter-spacing: 3.5px;
+      font-size: 3rem;
       line-height: 1.1;
-      margin-bottom: 0.6rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 3px rgba(199,108,108,0.6);
+      margin-bottom: 0.5em;
     }
-    .gradient-text {
-      background: linear-gradient(40deg, var(--accent), var(--accent-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
+    h2.section-title {
+      font-size: 2rem;
+      margin-bottom: 28px;
+      text-shadow: 0 0 6px var(--btn-bg);
+      font-family: var(--font-mono);
+      text-align: center;
     }
-    .role-badge {
-      margin-bottom: 1.6rem;
-      font-weight: 700;
-      font-family: 'Segoe UI Mono', monospace;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      color: var(--accent);
-      border-left: 5px solid var(--accent-dark);
-      padding-left: 18px;
-      max-width: 320px;
-      letter-spacing: 1.6px;
-      text-shadow: 0 0 4px rgba(247, 108, 108, 0.75);
+    h3.title {
+      font-size: 1.4rem;
+      margin-bottom: 1em;
+      color: var(--accent-amber);
     }
-    .bio {
+    p {
+      font-weight: 400;
       font-size: 1.1rem;
       color: var(--text-secondary);
-      max-width: 540px;
-      margin-bottom: 2.5rem;
-      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 1.5em;
+      max-width: 600px;
     }
-    .meta-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px 50px;
-      font-family: 'Segoe UI Mono', monospace;
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 3.5rem;
+    section {
+      margin-bottom: 56px;
     }
-    .meta-info span,
-    .meta-info a {
+    [tabindex]:focus-visible, button:focus-visible {
+      outline: 3px solid var(--btn-bg);
+      outline-offset: 3px;
+      border-radius: var(--radius);
+    }
+
+    /* Top container with bio left and profile ring right */
+    .top-section {
+      max-width: 960px;
+      margin: 0 auto 56px;
+      padding: 0 16px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 7px;
+      gap: 32px;
+      flex-wrap: nowrap;
     }
-    /* Buttons */
-    .btn-group {
+    /* Bio container */
+    .bio-container {
+      flex: 1;
+      color: var(--text-light);
+      text-align: left;
+      font-weight: 500;
+      user-select: none;
       display: flex;
-      gap: 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bio-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.1em;
+      color: var(--accent-amber);
+    }
+    .bio-container h2 {
+      font-weight: 700;
+      color: var(--btn-bg);
+      margin-bottom: 0.6em;
+      font-family: var(--font-mono);
+    }
+    .bio-text {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      max-width: 420px;
+      margin-bottom: 1em;
+    }
+    .button-group {
+      display: flex;
+      gap: 16px;
       flex-wrap: wrap;
     }
     .btn {
-      font-family: 'Segoe UI Mono', monospace;
-      font-weight: 700;
-      padding: 14px 36px;
-      border-radius: 15px;
-      cursor: pointer;
-      border: none;
-      transition: background-color var(--transition-speed) ease;
-      white-space: nowrap;
-      color: white;
       background-color: var(--btn-bg);
-      box-shadow: 0 7px 20px rgba(153, 248, 144, 0.85);
-      text-align: center;
+      color: var(--bg-dark);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      padding: 12px 22px;
+      font-size: 1rem;
+      cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color var(--transition-speed);
+      box-shadow: 0 0 8px var(--btn-bg);
+    }
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--bg-dark);
     }
     .btn:hover,
-    .btn:focus-visible {
+    .btn:focus {
       background-color: var(--btn-hover);
-      outline-offset: 3px;
-      outline-color: var(--btn-hover);
-      box-shadow: 0 12px 34px rgba(102, 218, 67, 0.9);
+      outline: none;
+      color: var(--bg-dark);
+      box-shadow: 0 0 12px var(--btn-hover);
     }
-    .btn-outline {
-      background-color: transparent;
-      color: var(--accent);
-      border: 2.5px solid var(--accent);
+    .contact-info {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
     }
-    .btn-outline:hover,
-    .btn-outline:focus-visible {
-      background-color: var(--btn-hover);
-      color: rgb(252, 33, 204);
-      border-color: var(--btn-hover);
-      outline-offset: 3px;
-      outline-color: var(--btn-hover);
-    }
-    /* Profile Image */
+
+    /* Profile ring placeholder */
     .profile-box {
       flex: 0 0 320px;
       position: relative;
@@ -224,536 +198,497 @@
       object-position: center;
       user-select: none;
       background: #555; /* fallback background */
+      }
     }
-    /* Fresher label bottom only */
-    .fresher-label-bottom {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--label-bg);
-      color: var(--label-color);
-      font-family: 'Segoe UI Mono', monospace;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 7px 20px;
-      border-radius: 18px;
-      letter-spacing: 2.2px;
-      user-select: none;
-      box-shadow: 0 1.5px 6px rgba(241, 159, 7, 0.7);
-      z-index: 2;
-    }
-    /* Section Label */
-    h2.section-label {
-      font-family: 'Segoe UI Mono', monospace;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: var(--accent);
-      text-align: center;
-      margin: 80px 0 40px;
-      letter-spacing: 3px;
-      text-shadow: 1px 1px 5px rgba(193, 228, 41, 0.7);
-    }
+
     /* Skills Section */
-    .stack-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 32px;
-      margin: 0 15px 70px;
-      justify-items: center;
-    }
-    .stack-card {
-      background-color: var(--bg-section);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(247, 108, 108, 0.6);
-      padding: 30px 26px;
-      color: var(--text-primary);
-      font-family: 'Segoe UI Mono', monospace;
-      text-align: center;
-      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-      cursor: default;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      user-select: none;
-    }
-    .stack-card:hover,
-    .stack-card:focus-within {
-      transform: translateY(-13px);
-      box-shadow: 0 26px 55px var(--btn-hover);
-      outline: none;
-    }
-    .stack-card h3 {
-      margin-bottom: 14px;
-      color: var(--accent-dark);
-      font-size: 1.6rem;
-      letter-spacing: 1.8px;
-    }
-    .stack-card div {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    /* Projects Section as unique cards full width */
-    .projects-section {
-      max-width: 100vw;
-      margin: 0 auto 75px;
-      padding: 35px 18px 55px;
-      background: var(--bg-section);
-      border-radius: 25px;
-      box-shadow: 0 16px 50px rgba(247, 108, 108, 0.8);
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .project-card {
-      border-radius: 20px;
-      padding: 28px 38px;
-      box-shadow: 0 12px 42px rgba(247, 108, 108, 0.45);
-      color: var(--text-primary);
-      margin-bottom: 30px;
-      font-weight: 600;
-      outline-offset: 5px;
-      user-select: none;
-      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    }
-    .project-card:hover,
-    .project-card:focus-within {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 45px var(--btn-hover);
-      outline: none;
-    }
-    .project-card.pink {
-      background: var(--slide-bg-pink);
-      color: var(--slide-text-pink);
-    }
-    .project-card.skin {
-      background: var(--slide-bg-skin);
-      color: var(--slide-text-skin);
-    }
-    .project-card.purple {
-      background: var(--slide-bg-purple);
-      color: var(--slide-text-purple);
-    }
-    .project-card.skyblue {
-      background: var(--slide-bg-skyblue);
-      color: var(--slide-text-skyblue);
-    }
-    .project-card.gold {
-      background: var(--slide-bg-gold);
-      color: var(--slide-text-gold);
-    }
-    .project-card h3 {
-      font-size: 1.95rem;
-      margin-bottom: 10px;
-      font-weight: 900;
-      text-shadow: 0 0 8px rgba(247, 108, 108, 0.7);
-    }
-    .project-card h4 {
-      font-weight: 600;
-      margin-bottom: 22px;
-      font-style: italic;
-      letter-spacing: 0.9px;
-      text-shadow: 0 0 4px rgba(199, 75, 75, 0.5);
-    }
-    .project-card ul {
-      list-style-type: disc;
-      margin-left: 32px;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      letter-spacing: 0.25px;
-    }
-    .project-card ul li {
-      margin-bottom: 14px;
-    }
-    /* Experience Section as slider cards */
-    .experience-slider {
+    .skills-section {
       position: relative;
-      max-width: 100vw;
-      margin: 0 auto 75px;
-      padding: 35px 18px 55px;
-      background: var(--bg-section);
-      border-radius: 25px;
-      box-shadow: 0 16px 50px rgba(247, 108, 108, 0.8);
-      font-family: 'Segoe UI Mono', monospace;
-      color: var(--text-primary);
-    }
-    .experience-track {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-      user-select: none;
-    }
-    .experience-card {
-      min-width: 320px;
-      background: var(--slide-bg-skin);
-      color: var(--slide-text-skin);
-      border-radius: 20px;
-      padding: 24px 32px;
-      box-shadow: 0 9px 35px var(--card-shadow);
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      user-select: none;
-      letter-spacing: 0.8px;
-      min-height: 160px;
-    }
-    .experience-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent-dark);
-      text-shadow: 0 0 6px rgba(247, 108, 108, 0.75);
-    }
-    .experience-card ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      padding-left: 10px;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-    .experience-card ul li {
-      margin-bottom: 8px;
-    }
-    /* Achievements slider kept unchanged but width 100% */
-    .achievements-slider {
-      position: relative;
-      max-width: 100vw;
-      margin: 0 auto 90px;
-      padding: 0 18px;
       overflow: hidden;
-      border-radius: 22px;
-      background: var(--bg-section);
-      box-shadow: 0 16px 50px var(--card-shadow);
-      user-select: none;
+      max-width: 100%;
+      margin-bottom: 56px;
     }
-    .achievements-track {
+    .skills-track {
       display: flex;
-      gap: 24px;
-      animation: scroll-left 35s linear infinite;
-      padding: 20px;
+      gap: 20px;
+      animation: scroll-right-to-left 25s linear infinite;
+      padding: 12px 0;
       user-select: none;
-    }
-    .achievement-card {
-      min-width: 320px;
-      background: var(--slide-bg-pink);
-      color: var(--slide-text-pink);
-      border-radius: 20px;
-      padding: 24px 32px;
-      box-shadow: 0 9px 35px var(--card-shadow);
-      font-family: 'Segoe UI Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
       justify-content: center;
+    }
+    .skill-card {
+      flex: 0 0 180px;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--text-light);
+      font-weight: 600;
+      cursor: default;
+      min-height: 130px;
       text-align: center;
-      letter-spacing: 0.8px;
-      color: var(--text-primary);
+      justify-content: center;
+    }
+    .skill-icon {
+      font-size: 2.6rem;
+      color: var(--btn-bg);
       user-select: none;
-      line-height: 1.4;
-      min-height: 85px;
     }
-    .achievements-track:hover {
-      animation-play-state: paused;
-      cursor: pointer;
+    .skill-title {
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--accent-amber);
     }
-    @keyframes scroll-left {
-      0% {transform: translateX(0);}
-      100% {transform: translateX(calc(-320px * 9 - 24px * 9));}
+    .skill-desc {
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      white-space: normal;
+      line-height: 1.3;
     }
-    /* Education Section */
-    .education-section {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      padding: 0 18px;
+    @keyframes scroll-right-to-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Projects & Experience Section */
+    .section-grid {
+      max-width: 960px;
+      margin: 0 auto 56px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
     }
-    .education-card {
-      background: var(--bg-section);
-      border-radius: 20px;
-      box-shadow: 0 13px 42px var(--card-shadow);
-      padding: 28px 24px;
-      color: var(--text-primary);
-      font-family: 'Segoe UI', sans-serif;
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       user-select: none;
-      line-height: 1.5;
-      transition: box-shadow 0.3s ease;
+      color: var(--text-light);
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .education-card:hover, .education-card:focus-within{
-      box-shadow: 0 24px 60px var(--btn-hover);
+    .card:focus-within,
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px var(--btn-bg);
       outline: none;
     }
-    .education-card h3 {
-      color: var(--accent-dark);
-      font-size: 1.62rem;
-      margin-bottom: 13px;
-      font-weight: 700;
-      text-shadow: 0 0 6px rgba(247, 108, 108, 0.75);
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent-amber);
+      text-shadow: 0 0 6px rgba(243, 167, 18, 0.9);
     }
-    .education-card div {
-      font-size: 1.08rem;
+    .card-date {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--btn-bg);
+      font-style: italic;
+    }
+    .card-desc {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      font-weight: 500;
       color: var(--text-secondary);
-      letter-spacing: 0.22px;
+      flex-grow: 1;
     }
+    ul.card-list {
+      margin-left: 20px;
+      list-style-type: disc;
+      margin-top: 12px;
+      color: var(--text-secondary);
+    }
+    ul.card-list li {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Single card style for Education */
+    .single-card-section {
+      max-width: 600px;
+      margin: 40px auto 56px auto;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+      color: var(--text-light);
+      font-family: var(--font-mono);
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      cursor: default;
+      transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+    }
+    .single-card-section:focus-within,
+    .single-card-section:hover {
+      box-shadow: 0 0 28px 6px var(--btn-bg);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .single-card-icon {
+      font-size: 3rem;
+      color: var(--btn-bg);
+      filter: drop-shadow(0 0 8px var(--btn-bg));
+      user-select: none;
+      align-self: center;
+    }
+    .single-card-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--accent-amber);
+      text-shadow: 0 0 8px var(--btn-bg);
+      text-align: center;
+    }
+    .single-card-list {
+      margin-left: 1.1em;
+      list-style-type: disc;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+      text-align: left;
+    }
+    .single-card-list li {
+      margin-bottom: 10px;
+    }
+
+    /* Separate card container for each achievement */
+    .achievement-cards {
+      max-width: 720px;
+      margin: 0 auto 56px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .achievement-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+      color: var(--text-light);
+      font-family: var(--font-mono);
+      cursor: default;
+      transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 160px;
+      text-align: left;
+    }
+    .achievement-card:focus-within,
+    .achievement-card:hover {
+      box-shadow: 0 0 28px 6px var(--btn-bg);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .achievement-icon {
+      font-size: 2.4rem;
+      color: var(--btn-bg);
+      filter: drop-shadow(0 0 6px var(--btn-bg));
+      user-select: none;
+    }
+    .achievement-title {
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--accent-amber);
+      text-shadow: 0 0 6px var(--btn-bg);
+    }
+    .achievement-issuer {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--btn-bg);
+    }
+    .achievement-date {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
     /* Footer */
     footer {
       text-align: center;
-      padding: 48px 16px;
-      background: var(--accent);
-      color: var(--bg-section);
-      font-family: 'Segoe UI Mono', monospace;
-      letter-spacing: 1.45px;
-      user-select: none;
-      box-shadow: 0 0 18px var(--accent);
+      padding: 30px 16px;
+      background-color: var(--btn-bg);
+      color: var(--bg-dark);
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
+      letter-spacing: 1.4px;
+      user-select: none;
+      border-radius: var(--radius);
+      box-shadow: 0 0 12px var(--btn-bg);
+      margin-top: 40px;
+      font-size: 1rem;
     }
+
     /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 50px;
-      }
-      .hero-content {
+    @media (max-width: 860px) {
+      main.container {
         max-width: 100%;
+        padding: 24px 12px;
       }
-      .profile-box {
-        max-width: 270px;
-        margin: 0 auto;
+      .top-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
       }
-      .stack-section {
-        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      .bio-container {
+        text-align: center;
       }
-      .experience-track,
-      .achievements-track {
+      .skills-track {
         animation: none;
         overflow-x: auto;
-        cursor: grab;
+        scrollbar-width: thin;
+        justify-content: start;
       }
-      .experience-card,
-      .achievement-card {
-        min-width: 290px;
+      .achievement-cards {
+        grid-template-columns: 1fr;
+        max-width: 100%;
       }
-      .achievements-track:hover {
-        animation-play-state: paused;
-      }
-      .achievements-slider {
-        max-width: 100vw;
-        border-radius: 0;
-        padding: 15px 18px 60px;
-      }
-      /* Projects section cards full width on mobile */
-      .projects-section {
-        padding: 20px 10px 45px;
-      }
-      .project-card {
-        padding: 20px 20px;
-        margin-bottom: 24px;
+      .single-card-list {
+        text-align: left;
       }
     }
+
   </style>
 </head>
 <body>
   <main class="container" role="main">
-    <!-- Hero -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-content" tabindex="0">
-        <p class="hello">Hello, I'm</p>
-        <h1>
-          BALAPANURU <br /><span class="gradient-text">TEJASRI</span>
-        </h1>
-        <div class="role-badge">Java Full Stack Web Developer Intern</div>
-        <p class="bio">
-          Building responsive web applications and deep learning projects.
-          Skilled in Java, Spring Boot, React, and AI-driven systems.
+
+    <!-- Top Section with bio left and profile ring right -->
+    <div class="top-section" tabindex="0" aria-label="Profile and bio section">
+      <div class="bio-container">
+        <h3> i am,</h3>
+        <h1 tabindex="0">BALAPANURU TEJASRI</h1>
+        <h2 tabindex="0">Java Full Stack Web Developer </h2>
+        <p class="bio-text" tabindex="0">
+          Enthusiastic fresher building responsive web apps and deep learning projects. Passionate about Java, Spring Boot, React, and AI-powered solutions.
         </p>
-        <div class="meta-info" aria-label="Contact Information">
-          <span>📞 +91 9704239080</span>
-          <span>✉️ <a href="mailto:balapanurutejasree@gmail.com" aria-label="Email balapanurutejasree@gmail.com">balapanurutejasree@gmail.com</a></span>
-          <span>
-            🔗
-            <a href="https://www.linkedin.com/in/tejasrib1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
-            <a href="https://github.com/Tejasri-coder" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a> |
-            <a href="#" aria-label="Portfolio Website">Portfolio</a>
-          </span>
+        <div class="button-group">
+          <a href="https://github.com/Tejasri-coder" target="_blank" rel="noopener noreferrer" class="btn" aria-label="View GitHub profile">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.4 0 12.07c0 5.33 3.438 9.86 8.207 11.46.6.11.82-.26.82-.58 0-.29-.01-1.04-.015-2.05-3.338.73-4.042-1.63-4.042-1.63-.546-1.42-1.33-1.8-1.33-1.8-1.085-.75.08-.74.08-.74 1.2.08 1.832 1.23 1.832 1.23 1.068 1.84 2.804 1.3 3.488.99.11-.77.42-1.3.765-1.6-2.67-.31-5.466-1.35-5.466-6.02 0-1.33.465-2.42 1.23-3.28-.125-.31-.535-1.56.115-3.25 0 0 1.005-.33 3.3 1.25a11.38 11.38 0 013.005-.4c1.02.004 2.045.14 3.005.4 2.28-1.58 3.28-1.25 3.28-1.25.655 1.69.245 2.94.12 3.25.765.86 1.23 1.95 1.23 3.28 0 4.68-2.805 5.71-5.48 6.01.43.37.815 1.1.815 2.22 0 1.6-.015 2.9-.015 3.3 0 .32.21.70.825.57C20.565 21.93 24 17.4 24 12.06 24 5.4 18.633 0 12 0Z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/tejasrib1" target="_blank" rel="noopener noreferrer" class="btn" aria-label="View LinkedIn profile">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20.452 20.452h-3.56v-5.568c0-1.33-.025-3.038-1.852-3.038-1.855 0-2.14 1.445-2.14 2.938v5.668H9.327V9h3.414v1.56h.05c.475-.9 1.635-1.852 3.36-1.852 3.593 0 4.256 2.36 4.256 5.42v6.323zM5.337 7.433a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.117 20.452H3.557V9h3.56v11.452zM22.225 0H1.77C.792 0 0 .793 0 1.772v20.455C0 23.206.792 24 1.77 24h20.455C23.208 24 24 23.206 24 22.227V1.773C24 .793 23.208 0 22.225 0z"/>
+            </svg>
+            LinkedIn
+          </a>
         </div>
-        <div class="btn-group">
-          <a href="mailto:balapanurutejasree@gmail.com" class="btn" aria-label="Get in Touch via Email">Get In Touch</a>
-          <a href="https://github.com/Tejasri-coder" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="View GitHub Projects">View Projects</a>
-        </div>
+        <p class="contact-info" tabindex="0">
+          📞 +91 12345 67890 &nbsp;&nbsp; | &nbsp;&nbsp; 📧 tejasri@email.com
+        </p>
       </div>
-      <div class="profile-box" aria-label="Profile image of Balapanuru Tejasri" tabindex="0">
+       <div class="profile-box" aria-label="Profile image of Balapanuru Tejasri" tabindex="0">
         <img src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/2d32a9e3-a9de-4944-8e8a-5204acd21656.jpeg" alt="Balapanuru Tejasri Efficient" />
         <div class="fresher-label-bottom" aria-label="Fresher label bottom">FRESHER</div>
       </div>
-    </section>
+    </div>
+
+    <!-- Keep the original heading and bio removed here as replaced above -->
 
     <!-- Skills Section -->
-    <h2 class="section-label" tabindex="0">Skills</h2>
-    <section class="stack-section" aria-label="Skills and technologies" tabindex="0">
-      <article class="stack-card" tabindex="0">
-        <h3>Programming</h3>
-        <div>Java, JavaScript</div>
-      </article>
-      <article class="stack-card" tabindex="0">
-        <h3>Frontend</h3>
-        <div>React, HTML, CSS</div>
-      </article>
-      <article class="stack-card" tabindex="0">
-        <h3>Backend</h3>
-        <div>Spring Boot, REST API</div>
-      </article>
-      <article class="stack-card" tabindex="0">
-        <h3>Database</h3>
-        <div>MySQL</div>
-      </article>
-      <article class="stack-card" tabindex="0">
-        <h3>Core Concepts</h3>
-        <div>OOPS, DBMS</div>
-      </article>
-    </section>
-
-    <!-- Projects Section as unique cards -->
-    <h2 class="section-label" tabindex="0">Projects</h2>
-    <section class="projects-section" aria-label="Projects details" tabindex="0">
-     
-      <article class="project-card skin" tabindex="0">
-        <h3>Deep Fake Image and Video Detection Using Deep Learning</h3>
-        
-        <ul>
-          <li>Implemented frontend using HTML, CSS, and JavaScript for user interaction.</li>
-          <li>Improved detection accuracy through model optimization and image preprocessing.</li>
-        </ul>
-      </article>
-      
-      <article class="project-card skyblue" tabindex="0">
-        <h3>Client-Server Application for Scalable Data Transfer</h3>
-       
-        <ul>
-          <li>Developed full stack client-server application using Java and related technologies.</li>
-          <li>Improved detection accuracy through model optimization and image preprocessing.</li>
-        </ul>
-      </article>
-     
-      <article class="project-card pink" tabindex="0">
-        <h3>Air Quality Dashboard</h3>
-       
-        <ul>
-          <li>Ensured performance, reliability, and fault tolerance of protocols.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Experience Section as slider cards -->
-    <h2 class="section-label" tabindex="0">Experience & Internships</h2>
-    <section class="experience-slider" aria-label="Experience and internships slider" tabindex="0" title="Experience and internships">
-      <div class="experience-track" aria-live="polite">
- <article class="project-card gold" tabindex="0">
-        <h3>Full Stack Web Development Intern</h3>
-       
-        <ul>
-          <li>TAP Academy Internship focused on full stack development skills.</li>
-        </ul>
-      </article>
-<article class="project-card purple" tabindex="0">
-        <h3>Power BI Intern</h3>
-       
-        <ul>
-          <li>Played an efficient role in Cognifyz Technologies as Power BI Intern.</li>
-        </ul>
-      </article>
- <article class="project-card pink" tabindex="0">
-        <h3>Generative AI with IBM Cloud Internship</h3>
-       
-        <ul>
-          <li>SMARTBRIDGE (APSCHE)</li>
-        </ul>
-      </article>
-        <article class="experience-card" tabindex="0">
-          <h3>Java Full Stack web specialisation</h3>
-         
-          <ul>
-            <li>Built responsive web applications using Java, Spring Boot, React, HTML, CSS, and JavaScript.</li>
-            <li>Designed and consumed RESTful APIs and integrated backend services with frontend.</li>
-            <li>Worked with MySQL databases and applied core OOPS principles in real-world projects.</li>
-            <li>Implemented secure Client-Server models for scalable data transfer.</li>
-          </ul>
-        
+    <section class="skills-section" aria-label="Skills section" tabindex="0">
+      <div class="skills-track" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill Java">
+          <div class="skill-icon" aria-hidden="true">☕</div>
+          <div class="skill-title">Java</div>
+          <div class="skill-desc">Robust backend programming and OOP.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill JavaScript">
+          <div class="skill-icon" aria-hidden="true">💻</div>
+          <div class="skill-title">JavaScript</div>
+          <div class="skill-desc">Dynamic front-end and interactivity.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill React">
+          <div class="skill-icon" aria-hidden="true">⚛️</div>
+          <div class="skill-title">React</div>
+          <div class="skill-desc">Modern UI development with components.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill Spring Boot">
+          <div class="skill-icon" aria-hidden="true">🌱</div>
+          <div class="skill-title">Spring Boot</div>
+          <div class="skill-desc">Secure REST APIs and backend microservices.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill MySQL">
+          <div class="skill-icon" aria-hidden="true">🗄️</div>
+          <div class="skill-title">MySQL</div>
+          <div class="skill-desc">Efficient data storage and query management.</div>
+        </article>
+        <!-- Duplicate for smooth infinite scroll -->
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill Java duplicate">
+          <div class="skill-icon" aria-hidden="true">☕</div>
+          <div class="skill-title">Java</div>
+          <div class="skill-desc">Robust backend programming and OOP.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill JavaScript duplicate">
+          <div class="skill-icon" aria-hidden="true">💻</div>
+          <div class="skill-title">JavaScript</div>
+          <div class="skill-desc">Dynamic front-end and interactivity.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill React duplicate">
+          <div class="skill-icon" aria-hidden="true">⚛️</div>
+          <div class="skill-title">React</div>
+          <div class="skill-desc">Modern UI development with components.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill Spring Boot duplicate">
+          <div class="skill-icon" aria-hidden="true">🌱</div>
+          <div class="skill-title">Spring Boot</div>
+          <div class="skill-desc">Secure REST APIs and backend microservices.</div>
+        </article>
+        <article class="skill-card" tabindex="0" role="group" aria-label="Skill MySQL duplicate">
+          <div class="skill-icon" aria-hidden="true">🗄️</div>
+          <div class="skill-title">MySQL</div>
+          <div class="skill-desc">Efficient data storage and query management.</div>
         </article>
       </div>
     </section>
 
-    <!-- Achievements Section -->
-    <h2 class="section-label" tabindex="0">Achievements</h2>
-    <section class="achievements-slider" aria-label="Achievements auto-scrolling slider" tabindex="0" title="Achievements auto-scrolling slider">
-      <div class="achievements-track" aria-live="polite">
-        <div class="achievement-card">
-          Participated in a National-Level Technical Symposium hosted at SVCE.
-        </div>
-        <div class="achievement-card">
-          Generative AI with IBM Cloud: 2-month internship certificate (APSCHE & SmartBridge, Jul 24, 2025)
-        </div>
-        <div class="achievement-card">
-          Cynosure 2k24 Participation: National-Level Technical Symposium at SVU (Mar 23-24, 2024)
-        </div>
-        <div class="achievement-card">
-          Foundations of Programming with Python: 30-hour live training (ExcelR, Sep 15 - Oct 6, 2025)
-        </div>
-        <div class="achievement-card">
-          Cloud Computing (NPTEL): Elite Online Certification, IIT Kharagpur, 65% (Jul-Oct 2025)
-        </div>
-        <div class="achievement-card">
-          Power BI Intern: Internship certificate from Cognifyz Technologies (Oct-Nov 2025)
-        </div>
-        <div class="achievement-card">
-          AWS Cloud Computing Devops: ExcelR & APSCHE short-term internship (Jul 17, 2025)
-        </div>
-        <div class="achievement-card">
-          Basics of Python (Infosys): Course completion, Infosys Springboard (Dec 27, 2024)
-        </div>
-        <div class="achievement-card">
-          Software Testing (NPTEL): Elite Online Certification, IIIT Bangalore, 61% (Jul-Oct 2025)
-        </div>
-        <!-- Repeat for smooth infinite scroll -->
-        <div class="achievement-card">
-          Participated in a National-Level Technical Symposium hosted at SVCE.
-        </div>
-        <div class="achievement-card">
-          Generative AI with IBM Cloud: 2-month internship certificate (APSCHE & SmartBridge, Jul 24, 2025)
-        </div>
-        <div class="achievement-card">
-          Cynosure 2k24 Participation: National-Level Technical Symposium at SVU (Mar 23-24, 2024)
-        </div>
-        <div class="achievement-card">
-          Foundations of Programming with Python: 30-hour live training (ExcelR, Sep 15 - Oct 6, 2025)
-        </div>
+    <!-- Projects Section -->
+    <section aria-label="Projects" tabindex="0">
+      <h2 class="section-title">Projects</h2>
+      <div class="section-grid">
+        <article class="card" tabindex="0" role="region" aria-labelledby="proj1-title">
+          <h3 id="proj1-title" class="card-title">Deep Fake Image and Video Detection</h3>
+          <div class="card-date" aria-label="Project duration">2024</div>
+          <p class="card-desc">
+            Implemented frontend with HTML, CSS, and JavaScript for user interaction. Improved detection accuracy via preprocessing and model optimization.
+          </p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="proj2-title">
+          <h3 id="proj2-title" class="card-title">Client-Server Scalable Data Transfer</h3>
+          <div class="card-date" aria-label="Project duration">2025</div>
+          <p class="card-desc">
+            Developed a full stack application using Java and related technologies ensuring secure and efficient data transfer.
+          </p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="proj3-title">
+          <h3 id="proj3-title" class="card-title">Air Quality Dashboard</h3>
+          <div class="card-date" aria-label="Project duration">2025</div>
+          <p class="card-desc">
+            Designed a reliable and fault-tolerant performance dashboard monitoring air quality metrics.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section aria-label="Experience and internships" tabindex="0">
+      <h2 class="section-title">Experience & Internships</h2>
+      <div class="section-grid">
+        <article class="card" tabindex="0" role="region" aria-labelledby="exp1-title">
+          <h3 id="exp1-title" class="card-title">Full Stack Web Development Intern</h3>
+          <div class="card-date" aria-label="Duration">TAP Academy Internship, 2024</div>
+          <p class="card-desc">Focused on full stack development skills building secure and scalable web apps.</p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="exp2-title">
+          <h3 id="exp2-title" class="card-title">Power BI Intern</h3>
+          <div class="card-date" aria-label="Duration">Cognifyz Technologies, 2025</div>
+          <p class="card-desc">Played a key role in data visualization and reporting using Power BI tools.</p>
+        </article>
+        <article class="card" tabindex="0" role="region" aria-labelledby="exp3-title">
+          <h3 id="exp3-title" class="card-title">Generative AI with IBM Cloud Internship</h3>
+          <div class="card-date" aria-label="Duration">SMARTBRIDGE (APSCHE), 2025</div>
+          <p class="card-desc">Completed specialized internship focusing on generative AI and cloud computing.</p>
+        </article>
       </div>
     </section>
 
     <!-- Education Section -->
-    <h2 class="section-label" tabindex="0">Education</h2>
-    <section class="education-section" aria-label="Educational qualifications" tabindex="0">
-      <article class="education-card" tabindex="0">
-        <h3>B.Tech in Computer Science and Engineering</h3>
-        <div>2022 - 2026<br />KORMCE Institute, India<br />CGPA: 8.6</div>
+    <section class="single-card-section" aria-label="Education section" tabindex="0" role="region">
+      <div class="single-card-icon" aria-hidden="true">🎓</div>
+      <h3 class="single-card-title">Education</h3>
+      <ul class="single-card-list" tabindex="0">
+        <li><strong>B.Tech in Computer Science and Engineering</strong> (2022–2026)</li>
+        <li>CGPA: 8.6</li>
+        <li>KORMCE Institute, India</li>
+        <li><strong>Intermediate (MPC)</strong> (2021–2022)</li>
+        <li>Percentage: 89%</li>
+        <li>AP Model College, India</li>
+      </ul>
+    </section>
+
+    <!-- Achievements Section -->
+    <section aria-label="Achievements and certifications section" tabindex="0" role="region" class="achievement-cards">
+    
+      <h2 class="section-title">
+        achievements & certifications </h2>
+      
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv1-title">
+        <div class="achievement-icon" aria-hidden="true">🏅</div>
+        <h4 class="achievement-title" id="achv1-title">Participant in Cynosure 2k24</h4>
+        <div class="achievement-issuer">Sri Venkateswara University</div>
+        <div class="achievement-date">March 2024</div>
       </article>
-      <article class="education-card" tabindex="0">
-        <h3>Intermediate (MPC)</h3>
-        <div>2021 - 2022<br />AP Model College, India<br />Percentage: 89%</div>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv2-title">
+        <div class="achievement-icon" aria-hidden="true">📄</div>
+        <h4 class="achievement-title" id="achv2-title">5+ Papers Presented</h4>
+        <div class="achievement-issuer">Various Technical Festivals</div>
+        <div class="achievement-date">Multiple Dates</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv3-title">
+        <div class="achievement-icon" aria-hidden="true">🚀</div>
+        <h4 class="achievement-title" id="achv3-title">Generative AI with IBM Cloud Internship</h4>
+        <div class="achievement-issuer">APSCHE & SmartBridge</div>
+        <div class="achievement-date">July 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv4-title">
+        <div class="achievement-icon" aria-hidden="true">📊</div>
+        <h4 class="achievement-title" id="achv4-title">Power BI Intern</h4>
+        <div class="achievement-issuer">Cognifyz Technologies</div>
+        <div class="achievement-date">Oct – Nov 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv5-title">
+        <div class="achievement-icon" aria-hidden="true">☁️</div>
+        <h4 class="achievement-title" id="achv5-title">AWS Cloud Computing & DevOps Internship</h4>
+        <div class="achievement-issuer">ExcelR & APSCHE</div>
+        <div class="achievement-date">July 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv6-title">
+        <div class="achievement-icon" aria-hidden="true">🎓</div>
+        <h4 class="achievement-title" id="achv6-title">Cloud Computing (Elite Certification)</h4>
+        <div class="achievement-issuer">NPTEL – IIT Kharagpur</div>
+        <div class="achievement-date">Score: 65% | Oct 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv7-title">
+        <div class="achievement-icon" aria-hidden="true">🎓</div>
+        <h4 class="achievement-title" id="achv7-title">Software Testing (Elite Certification)</h4>
+        <div class="achievement-issuer">NPTEL – IIIT Bangalore</div>
+        <div class="achievement-date">Score: 61% | Oct 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv8-title">
+        <div class="achievement-icon" aria-hidden="true">🐍</div>
+        <h4 class="achievement-title" id="achv8-title">Foundations of Programming with Python</h4>
+        <div class="achievement-issuer">ExcelR (30-hour live training)</div>
+        <div class="achievement-date">Oct 2025</div>
+      </article>
+      <article class="achievement-card" tabindex="0" role="group" aria-labelledby="achv9-title">
+        <div class="achievement-icon" aria-hidden="true">🐍</div>
+        <h4 class="achievement-title" id="achv9-title">Basics of Python</h4>
+        <div class="achievement-issuer">Infosys Springboard</div>
+        <div class="achievement-date">Dec 2024</div>
       </article>
     </section>
+
   </main>
 
-  <footer tabindex="0">&copy; <span id="currentYear">2026</span> BALAPANURU TEJASRI | Teja Web Portfolio</footer>
+  <footer tabindex="0" aria-label="Footer">
+    &copy; <span id="currentYear"></span> BALAPANURU TEJASRI | Teja Web Portfolio
+  </footer>
 
   <script>
-    // Set current year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
